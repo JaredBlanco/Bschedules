@@ -263,7 +263,6 @@ $('workbook-file').onchange=async event=>{const file=event.target.files?.[0];if(
  try{const replacement=await loadWorkbook(file);data=replacement;windowStart=nearTodayStart();render();$('scroll').scrollLeft=0;$('project').title=`Updated from ${file.name}`}
  catch(error){alert(`Could not update the schedule: ${error.message}`)}finally{event.target.value=''}
 };
-if(matchMedia('(max-width:1100px)').matches)$('window').value='8';
 windowStart=nearTodayStart();
 render();
 </script>
